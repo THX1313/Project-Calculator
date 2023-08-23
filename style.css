@@ -1,0 +1,75 @@
+html {
+	color-scheme: light dark;
+	padding: 0;
+	margin: 0;
+}
+main {
+	display: flex;
+	justify-content: center;
+	border: 2px solid blue;
+	min-height: 300px;
+	height: 75vh;
+}
+.calculator {
+	flex-grow: 0;
+	flex-shrink: 1;
+	flex-basis: auto;
+
+	max-width: 400px;
+	height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+	border: 2px solid green;
+}
+.display {
+	flex-grow: 0;
+	flex-shrink: 1;
+	flex-basis: 25%;
+    border: 1px solid orange;
+
+		.top, .bottom {
+			width: 100%;
+			height: 50%;
+			text-align: right;
+    		border: 2px dotted purple;
+    	}
+}
+.buttonGrid {
+	flex-grow: 0;
+	flex-shrink: 1;
+	flex-basis: 75%;
+
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+button {
+	background-color: var(--clr-surface);
+	color: white;
+    font-size: 2.5rem;
+}
+button:hover,
+button:focus {
+    background-color: var(--clr-text);
+}
+.numberButton {
+    background-color: var(--clr-surface);
+	transition: background-color 0.3s ease;
+}
+.operatorButton {
+	transition: background-color 0.3s ease;
+	background-color: var(--clr-secondary);
+}
+.specialButton {
+	background-color: var(--clr-accent);
+	transition: background-color 0.3s ease;
+}
+:root {	
+	--clr-text: #475615;
+	--clr-surface: #93DE78;
+	--clr-primary: #85CE36;
+	--clr-secondary: #DCDA70;
+	--clr-accent: #D9BA63;
+}

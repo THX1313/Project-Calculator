@@ -2,13 +2,52 @@
 
 // Here are some use cases (abilities your project needs to have):
 
-// Your calculator is going to contain functions for all of the basic math operators you typically find on simple calculators, so start by creating functions for the following items and testing them in your browser’s console.
-// add
-// subtract
-// multiply
-// divide
+const add = function(a,b) {
+	return a + b;
+};
+
+const subtract = function(a,b) {
+	return a - b;
+};
+
+const multiply = function (a, b) {
+  return a * b;
+}
+
+const divide = function (a, b) {
+  return a / b;
+}
+
 // A calculator operation will consist of a number, an operator, and another number. For example, 3 + 5. Create three variables for each of the parts of a calculator operation. Create a variable for the first number, the operator, and the second number. You’ll use these variables to update your display later.
+
+let number1 = 0;
+let number2 = 0;
+let operator = '';
+
 // Create a new function operate that takes an operator and 2 numbers and then calls one of the above functions on the numbers.
+
+function operate(num1, num2, operation) {
+  let result;
+  switch (operation) {
+    case '+':
+      result = add(num1, num2);
+      break;
+    case '-':
+      result = subtract(num1, num2);
+      break;
+    case '*':
+      result = multiply(num1, num2);
+      break;
+    case '/':
+      result = divide(num1, num2);
+      break;
+    default:
+      result = 'Something went wrong in the operate function';
+      console.log('Something went wrong in the operate function');
+    }
+}
+
+
 // Create a basic HTML calculator with buttons for each digit, each of the above functions and an “Equals” key.
 // Do not worry about wiring up the JS just yet.
 // There should also be a display for the calculator. Go ahead and fill it with some dummy numbers so it looks correct.
