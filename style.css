@@ -6,10 +6,15 @@ html {
 main {
 	display: flex;
 	justify-content: center;
-	border: 2px solid blue;
+	/* border: 2px solid blue; */
 	min-height: 300px;
 	height: 75vh;
 }
+.top, .bottom, button {
+	border: 2px solid 	var(--clr-calculator);
+	border-radius: 10px;
+}
+
 .calculator {
 	flex-grow: 0;
 	flex-shrink: 1;
@@ -21,55 +26,74 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-	border: 2px solid green;
+	box-sizing: border-box;
+
 }
 .display {
 	flex-grow: 0;
 	flex-shrink: 1;
-	flex-basis: 25%;
-    border: 1px solid orange;
+	flex-basis: 20%;
+	color: var(--clr-text);
 
-		.top, .bottom {
-			width: 100%;
-			height: 50%;
+		.top {
+			box-sizing: border-box;
+			font-size: 2rem;
+
 			text-align: right;
-    		border: 2px dotted purple;
+			width: 100%;
+			height: 40%;
+			text-align: right;
+
+			background-color: var(--clr-display);
+
     	}
+			.bottom {
+			box-sizing: border-box;
+			font-size: 3rem;
+
+			text-align: right;
+			width: 100%;
+			height: 60%;
+			text-align: right;
+			
+			background-color: var(--clr-display);
+		}
 }
 .buttonGrid {
 	flex-grow: 0;
 	flex-shrink: 1;
-	flex-basis: 75%;
+	flex-basis: 80%;
 
-    border: 1px solid red;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 button {
 	background-color: var(--clr-surface);
-	color: white;
+	color: var(--clr-text);
     font-size: 2.5rem;
 }
 button:hover,
 button:focus {
-    background-color: var(--clr-text);
+    background-color: var(--clr-hover);
 }
 .numberButton {
-    background-color: var(--clr-surface);
+    background-color: var(--clr-number);
 	transition: background-color 0.3s ease;
 }
 .operatorButton {
 	transition: background-color 0.3s ease;
-	background-color: var(--clr-secondary);
+	background-color: var(--clr-operator);
 }
 .specialButton {
-	background-color: var(--clr-accent);
+	background-color: var(--clr-special);
 	transition: background-color 0.3s ease;
 }
-:root {	
-	--clr-text: #475615;
-	--clr-surface: #93DE78;
-	--clr-primary: #85CE36;
-	--clr-secondary: #DCDA70;
-	--clr-accent: #D9BA63;
-}
+:root {
+	--clr-text: #f0f0f0;      /* Light Gray */
+	--clr-number: #3498db;    /* Bright Blue */
+	--clr-special: #e74c3c;   /* Reddish */
+	--clr-display: #2c3e50;   /* Dark Blue */
+	--clr-hover: #95a5a6;     /* Steel Gray */
+	--clr-operator: #27ae60;  /* Green */
+	--clr-calculator: #ecf0f1; /* Light Gray */
+  }
