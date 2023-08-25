@@ -1,94 +1,3 @@
-html {
-	color-scheme: light dark;
-	padding: 0;
-	margin: 0;
-}
-main {
-	display: flex;
-	justify-content: center;
-	/* border: 2px solid blue; */
-	min-height: 300px;
-	height: 75vh;
-}
-.top, .bottom, button {
-	border: 2px solid 	var(--clr-calculator);
-	border-radius: 10px;
-	box-shadow: 0px 0px 2px 2px rgb(0,0,0);
-}
-
-.calculator {
-	flex-grow: 0;
-	flex-shrink: 1;
-	flex-basis: auto;
-
-	max-width: 400px;
-	height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-	box-sizing: border-box;
-
-}
-.display {
-	flex-grow: 0;
-	flex-shrink: 1;
-	flex-basis: 20%;
-	color: var(--clr-text);
-
-		.top {
-			box-sizing: border-box;
-			font-size: 2rem;
-
-			text-align: right;
-			width: 100%;
-			height: 40%;
-			text-align: right;
-
-			background-color: var(--clr-display);
-
-    	}
-			.bottom {
-			box-sizing: border-box;
-			font-size: 3rem;
-
-			text-align: right;
-			width: 100%;
-			height: 60%;
-			text-align: right;
-			
-			background-color: var(--clr-display);
-		}
-}
-.buttonGrid {
-	flex-grow: 0;
-	flex-shrink: 1;
-	flex-basis: 80%;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-button {
-	background-color: var(--clr-surface);
-	color: var(--clr-text);
-    font-size: 2.5rem;
-	box-shadow: 0px 0px 2px 2px rgb(0,0,0);
-}
-button:hover {
-    background-color: var(--clr-hover);
-}
-.numberButton {
-    background-color: var(--clr-number);
-	transition: background-color 0.3s ease;
-}
-.operatorButton {
-	transition: background-color 0.3s ease;
-	background-color: var(--clr-operator);
-}
-.specialButton {
-	background-color: var(--clr-special);
-	transition: background-color 0.3s ease;
-}
 :root {
 	--clr-text: #f0f0f0;      /* Light Gray */
 	--clr-number: #3498db;    /* Bright Blue */
@@ -97,4 +6,69 @@ button:hover {
 	--clr-hover: #95a5a6;     /* Steel Gray */
 	--clr-operator: #27ae60;  /* Green */
 	--clr-calculator: #ecf0f1; /* Light Gray */
-  }
+}
+html {
+	color-scheme: light dark;
+	padding: 0;
+	margin: 0;
+}
+main {
+	display: flex;
+	justify-content: center;
+	min-height: 300px;
+	height: 75vh;
+}
+.calculator {
+	flex-grow: 0;
+	flex-shrink: 1;
+	flex-basis: auto;
+	max-width: 400px;
+	height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+	box-sizing: border-box;
+}
+.display {
+	flex-grow: 0;
+	flex-shrink: 1;
+	flex-basis: 15%;
+	text-align: right;
+}
+.buttonGrid {
+	flex-grow: 0;
+	flex-shrink: 1;
+	flex-basis: 85%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.buttonStyle {
+	background-color: var(--clr-surface);
+	color: var(--clr-text);
+    font-size: 2.5rem;
+}
+.displayStyle {
+	color: var(--clr-text);
+	background-color: var(--clr-display);
+	font-size: 4rem;
+}
+.buttonStyle, .displayStyle {
+	border: 2px solid 	var(--clr-calculator);
+	border-radius: 10px;
+	box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+}
+button:hover {
+    background-color: var(--clr-hover);
+}
+.numberButton, .modeButton, .decimalButton {
+    background-color: var(--clr-number);
+	transition: background-color 0.3s ease;
+}
+.operatorButton, .equalsButton {
+	transition: background-color 0.3s ease;
+	background-color: var(--clr-operator);
+}
+.ACButton, .specialButton {
+	background-color: var(--clr-special);
+	transition: background-color 0.3s ease;
+}
