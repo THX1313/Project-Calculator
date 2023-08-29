@@ -68,7 +68,7 @@ button:hover {
 	transition: background-color 0.3s ease;
 	background-color: var(--clr-operator);
 }
-.ACButton, .specialButton {
+.acButton, .specialButton {
 	background-color: var(--clr-special);
 	transition: background-color 0.3s ease;
 }
