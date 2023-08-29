@@ -57,19 +57,22 @@ function operate() {
       result = divide(num1, num2);
       break;
     case null:
-      result = 'Variable, operator, is equal to null';
-      console.log('Variable, operator, is equal to null')
+      result = "0";
       break;
     default:
-      result = 'Error in operate()';
-      console.log('Error in operate()');
+      result = "0";
   }
   num1 = result;
   return result;
 }
 
-function updateDisplayAndNumbers(newString) {
-      display.innerText = newString;
+function updateDisplay(newNumber) {
+  newString = newNumber.toString();
+  if (newString.length > 8) {
+    newString = Number.parseFloat(newNumber).toExponential(3);
+  }
+  display.innerText = newString;
+
 }
 
 acButton.addEventListener('click', clearAll);
@@ -78,45 +81,36 @@ function clearAll() {
   num1 = "0";
   num2 = null;
   isNum1 = true;
-  isFirstOperator = true;
+  isFirstOperator = true
   operator = null;
   displayString = "0";
-  updateDisplayAndNumbers(displayString);
+  updateDisplay(displayString);
 }
 
 numberButtons.forEach(button => {
   let numberToDisplay;
   button.addEventListener('click', () => {
-    console.log(`Button "${button.innerText}" was clicked.`);
     if (isNum1) {
       if (num1 === "0") {
-        console.log(`button.innerText is ${button.innerText}`);
         num1 = button.innerText;
-              console.log(`num1 is now ${num1}`);
       } else {
         num1 = num1 + button.innerText;
       }
-      console.log(`num1 is now ${num1}`);
       numberToDisplay = num1;
     } else {
         if (num2 === "0" || num2 === null) {
-          console.log(`button.innerText is ${button.innerText}`);
           num2 = button.innerText;
-                console.log(`num2 is now ${num2}`);
         } else {
           num2 = num2 + button.innerText;
         }
-        console.log(`num2 is now ${num2}`);
         numberToDisplay = num2;
     }
-    console.log(`The number to display is ${numberToDisplay}`);
-    updateDisplayAndNumbers(numberToDisplay);
+    updateDisplay(numberToDisplay);
   });
 });
 
 operatorButtons.forEach(button => {
   button.addEventListener('click', () => {
-    console.log(`Button "${button.innerText}" was clicked.`);
     if (isFirstOperator) {
       operator = button.innerText;
       isNum1 = false;
@@ -124,7 +118,7 @@ operatorButtons.forEach(button => {
     } else {
       if (num2) {
         numberToDisplay = operate();
-        updateDisplayAndNumbers(numberToDisplay);
+        updateDisplay(numberToDisplay);
         num2 = null;
         operator = button.innerText;
       } else {
@@ -139,7 +133,7 @@ operatorButtons.forEach(button => {
 equalsButton.addEventListener('click', function () {
   if (!isNum1 && num2 !== null && operator !== null) {
     displayString = operate();
-    updateDisplayAndNumbers(displayString);
+    updateDisplay(displayString);
     num2 = "0";
     operator = null;
     isNum1 = true;
